@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "GEN-UNIQUE"
+      "value": "Demovault"
     },
     "objectId": {
       "value": "GEN-AZUREAD-OBJECTID"
