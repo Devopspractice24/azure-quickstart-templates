@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'projectA'
+    subscriptionId: 'b22e16a2-5e73-42db-80b1-6f5350b9ad24'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'INfra-RG'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/Devopspractice24/azure-quickstart-templates/master/101-key-vault-create/azuredeploy.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/Devopspractice24/azure-quickstart-templates/master/101-key-vault-create/azuredeploy.parameters.json'
+    deploymentMode: 'Complete'
